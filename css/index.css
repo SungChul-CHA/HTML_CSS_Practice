@@ -1,0 +1,202 @@
+/* * : 전체선택자 */
+/* 전체선택자를 이용한 초기화 코드 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* 여러요소 동시 선택 */
+h1, h2, h3 {
+  font-size: 100%;
+}
+
+/* 아이디선택자 100점 */
+#header {
+  width: 1200px;
+  /* height: 150px; */
+  border: 4px solid red;
+}
+
+/* 110점이므로 우선순위가 높음 */
+#header .logo {
+  border: 1px solid black;
+}
+
+
+/* 클래스 선택자 10점 */
+/* 아래쪽 css가 적용됨 */
+.txt {
+  /* border: 5px solid yellow; */
+  /* border: 10px dashed red; */
+  /* 순서를 바꿀 수 있지만 바꿀 수 없는 애들도 있기 때문에 바꾸지 말것 */
+  /* border: red 10px solid; */
+  /*#000000 : 16진수 RGB*/
+  /* 축약형(border): 전부 적용됨 */
+  border: 5px solid #3bb8a798;
+  /* 개별속성으로 따로따로 적용 */
+  border-bottom: 10px solid red;
+  border-top: none;
+
+}
+
+.main_news {
+  border: 1px solid black;
+  /* 단위가 %이면 부모 크기가 기준 */
+  width: 50%;
+  height: 300px;
+}
+
+/*하위 선택자 : space bar*/
+.main_news a:focus {
+  outline: none;
+}
+
+.logo {
+  border: 5px solid red;
+}
+
+/* 하위선택자 방식을 주로 사용 */
+/* tag일때는 . 없이 이름만 적는다. */
+/* tag는 1점 */
+/* 111점 */
+/* #header .gnb li {
+  border: 2px solid yellowgreen;
+} */
+
+/* 자식선택자 */
+/* 이중리스트구조에서 주로 사용하여 직계자식요소만 선택 */
+#header .gnb>li {
+  border: 2px solid yellowgreen
+}
+
+/* #header .gnb a {
+  color: red;
+} */
+
+#header .gnb>li>a {
+  color: red;
+}
+
+/* 121점 */
+#header .gnb .depth02 a {
+  color: yellowgreen;
+}
+
+/* 속성선택자 : 속성값으로 선택 [] form 스타일시 사용 */
+/* "" 생략 가능 */
+input[type="checkbox"] {
+  outline: 5px solid black;
+}
+
+/* 인접형제선택자 : 앞쪽요소 바로 다음에 있는 형제요소 : + */
+input[type=checkbox] + label {
+  text-decoration: underline;
+}
+
+/* 인라인 스타일 점수는 1,000점 */
+.title {
+/* css에서 인라인 스타일을 바꿔야 할때는 important : 10,000점 */
+/* 반응형에서는 스타일을 바꿔야 해서 그 때는 바꾸지 못함 따라서 가능한 쓰지 말자 */
+  border: 10px dotted blue !important;
+}
+
+/* 가상 클래스 : 10점 */
+/* a:link {
+  color: black;
+} */
+
+/* 링크로 이동하고 돌아왔을때 */
+/* a:visited {
+  color: gray;
+} */
+
+/* 마우스 올렸을 때 */
+/* a:hover {
+  color: red;
+} */
+
+/* 누르고 있을 때. 클릭이랑 다른거임 */
+/* a:active {
+  color: green;
+} */
+
+/* box 안에 a가 없어서 hover 사용 불가 */
+/* #header .box:hover a {
+  background: red;
+} */
+
+/* :hover는 자신과 하위요소의 스타일변경시 사용가능 */
+#header .box:hover p {
+  color: red;
+}
+
+#header .gnb {
+  margin-top: 100px;
+}
+
+#header .gnb>li:first-child {
+  border: 2px solid black;
+}
+
+#header .gnb>li:nth-child(2) {
+  background: yellowgreen;
+}
+
+#header .gnb>li:last-child {
+  background: rgb(49, 120, 179);
+}
+
+/* 홀수번째 요소선택 */
+#header .gnb>li:nth-child(odd) {
+  border: 4px solid red;
+}
+
+#header .gnb>li:nth-child(even) {
+  border: 4px solid blue;
+}
+
+/* 특정조건 제외 */
+#header .gnb>li:not(:first-child) {
+  border:10px solid yellow;
+}
+
+/* #header .test {
+  color: yellowgreen;
+} */
+
+/* 문자열 선택자 */
+/* div중 class명이 box로 시작하는 요소 모두 선택 */
+#header div[class^=box] {
+  font-size: 100px;
+}
+
+/* box를 포함하는 요소 */
+#header div[class*=box] {
+  color: blue;
+}
+
+/* 가상요소선택자(1점) - ::before, ::after */
+#header .close_btn {
+  width: 200px; height: 100px;
+}
+
+/* 텍스트의 이전 이후 */
+#header .close_btn::after {
+  /* 필수속성 */
+  content: '';
+  /* css에서 꾸미기 위해 inline 형태로 바꿈 */
+  display: inline-block; 
+  width: 30px; 
+  height: 31px;
+  border:2px solid red;
+  /* 좌우로 배치되는 글자취급요소의 수직정렬  */
+  vertical-align: 0px;
+  
+  background: url(../images/allmenu-icon.png) no-repeat;
+}
+

@@ -1,7 +1,6 @@
 # CSS
 
 [MDN CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
-[Color name](https://htmlcolorcodes.com/color-names/)
 
 ## Font
 
@@ -19,4 +18,4 @@
 
 ## image
 
--[unsplash](https://unsplash.com/ko)
+- [unsplash](https://unsplash.com/ko)
