@@ -16,6 +16,10 @@
 
 - [Easings](https://easings.net/)
 
-## image
+## Image
 
 - [unsplash](https://unsplash.com/ko)
+
+## [Line-height](https://velog.io/@ursr0706/line-height-%EC%86%8D%EC%84%B1)
+
+![line-height](src/line-height.png)
